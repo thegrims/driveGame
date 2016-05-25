@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "driveGame.CSharp", "driveGame.CSharp.csproj", "{91C560E0-B174-BEE5-1748-1D8319699FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "driveGame.CSharp.Editor", "driveGame.CSharp.Editor.csproj", "{91592849-975B-7801-6639-55890A3661C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91C560E0-B174-BEE5-1748-1D8319699FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C560E0-B174-BEE5-1748-1D8319699FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C560E0-B174-BEE5-1748-1D8319699FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C560E0-B174-BEE5-1748-1D8319699FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91592849-975B-7801-6639-55890A3661C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91592849-975B-7801-6639-55890A3661C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91592849-975B-7801-6639-55890A3661C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91592849-975B-7801-6639-55890A3661C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
