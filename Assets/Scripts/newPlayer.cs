@@ -5,6 +5,10 @@ public class newPlayer : MonoBehaviour {
     public float speed;
     private Rigidbody rb;
     int carPos = 0;
+    public Vector3 targetPosition = new Vector3(0f,0f,1f);
+    float m_fSpeed = 200f;
+    bool left = false;
+    bool right = false;
     // Use this for initialization
     void Start ()
     {
@@ -15,22 +19,51 @@ public class newPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (m_fSpeed < 1)//((rb.position.z==0f) || (rb.position.z == 6.6f) || (rb.position.z == -6.6f)))
+        {
+            right = false;
+            left = false;
+            m_fSpeed = 0;
+            //rb.position.z = 0;
+            if((-1<rb.position.z)&&(1 > rb.position.z))
+            {
+                transform.Translate(Vector3.right * rb.position.z*-1);
+            }
+            //transform.Translate(Vector3.right * );
+        }
+
+        if ((right==true)&&(rb.position.z<6))
+        {
+            Debug.Log(rb.position);
+            m_fSpeed = m_fSpeed / 1.5f;
+            transform.Translate(Vector3.right * m_fSpeed * Time.deltaTime);
+        }
+        if ((left == true)&& (rb.position.z <6))
+        {
+
+            Debug.Log(rb.position);
+            m_fSpeed = m_fSpeed / 1.5f;
+            transform.Translate(Vector3.left * m_fSpeed * Time.deltaTime);
+        }
+        //if (rb.position.z>=10)
+        //{
+        //    right = false;
+        //}
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
 
         /*Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);*/
         if (Input.GetKeyDown("right"))
         {
-            for(int i=0; i<10; i++)
-            {
-                rb.position += Vector3.right*i/10;
-            }
-            
+            right = true;
+            m_fSpeed = 200f;
         }
         if (Input.GetKeyDown("left"))
         {
-
-            rb.position += Vector3.left * 3F;
+            left = true;
+            m_fSpeed = 200f;
+            //rb.position += Vector3.left * 3F;
+            //Debug.Log(rb.position);
         }
     }
     void FixedUpdate()
