@@ -19,29 +19,30 @@ public class newPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (m_fSpeed < 1)//((rb.position.z==0f) || (rb.position.z == 6.6f) || (rb.position.z == -6.6f)))
+        if (m_fSpeed <= 1)//&&((rb.position.x==0f) || (rb.position.x == 6.6f) || (rb.position.x == -6.6f)))
         {
             right = false;
             left = false;
             m_fSpeed = 0;
             //rb.position.z = 0;
-            if((-1<rb.position.z)&&(1 > rb.position.z))
+            if((-2<rb.position.x)&&(2 > rb.position.x))
             {
-                transform.Translate(Vector3.right * rb.position.z*-1);
+                transform.Translate(Vector3.right * rb.position.x*-1);
             }
+
             //transform.Translate(Vector3.right * );
         }
 
-        if ((right==true)&&(rb.position.z<6))
+        if ((right==true)&&(rb.position.x<20))
         {
-            Debug.Log(rb.position);
+            Debug.Log(rb.position.x);
             m_fSpeed = m_fSpeed / 1.5f;
             transform.Translate(Vector3.right * m_fSpeed * Time.deltaTime);
         }
-        if ((left == true)&& (rb.position.z <6))
+        if ((left == true)&& (rb.position.x <20))
         {
 
-            Debug.Log(rb.position);
+            Debug.Log(rb.position.x);
             m_fSpeed = m_fSpeed / 1.5f;
             transform.Translate(Vector3.left * m_fSpeed * Time.deltaTime);
         }
